@@ -29,6 +29,7 @@ body {
 font-family: 'Source Sans Pro', sans-serif; */
 
 .content-wrapper {
+  min-height: 80vh;
   text-align: left;
   background-color: var(--surface-color);
   padding: 56px 32px;

@@ -1,17 +1,19 @@
 <template>
   <div class="content-wrapper">
     <LayoutHeadings :title="title" :subtitle="getString" />
-    <p>{{ skipToNextQuestion }}</p>
-    <button
-      class="btn-quizbox"
-      @click="this.counter++"
-      v-if="this.counter < this.questions?.length"
-    >
-      Next Question
-    </button>
-    <button class="btn-quizbox" v-else @click="backToPlayNewQuizbox">
-      Play New Quiz
-    </button>
+    <h3>{{ skipToNextQuestion }}</h3>
+    <div class="btn-center">
+      <button
+        class="btn-quizbox"
+        @click="this.counter++"
+        v-if="this.counter < this.questions?.length"
+      >
+        Next Question
+      </button>
+      <button class="btn-quizbox" v-else @click="backToPlayNewQuizbox">
+        Play New Quiz
+      </button>
+    </div>
   </div>
 </template>
 
@@ -56,3 +58,13 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+h3 {
+  text-align: center;
+  font-weight: 600;
+}
+.btn-center {
+  text-align: center;
+}
+</style>
