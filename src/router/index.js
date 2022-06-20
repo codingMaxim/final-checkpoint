@@ -21,7 +21,7 @@ const routes = [
     component: BrowseQuestionsView,
   },
   {
-    path: "/quizbox-box",
+    path: "/quizbox-session",
     name: "quizbox-box",
     component: QuizboxView,
   },
