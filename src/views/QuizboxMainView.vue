@@ -101,4 +101,19 @@ export default {
 ul {
   list-style-type: none;
 }
+
+input[type="checkbox"] {
+  all: unset;
+  border: solid var(--primary-color) 2px;
+  margin-right: 0.5rem;
+  width: 1.15rem;
+  height: 1.15rem;
+  transition: background-color 0.4s ease-in-out;
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--primary-color);
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true' focusable='false' %3E%3Cpath fill='none' stroke='white' stroke-width='3' d='M1.73 12.91l6.37 6.37L22.79 4.59' /%3E%3C/svg%3E");
+}
 </style>
