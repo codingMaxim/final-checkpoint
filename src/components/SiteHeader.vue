@@ -2,9 +2,21 @@
   <header class="site-header">
     <div class="header-top">
       <button class="burger-button" @click="toggleMenu">
-        <span class="burger-bar burger-bar-one"></span>
-        <span class="burger-bar burger-bar-two"></span>
-        <span class="burger-bar burger-bar-three"></span>
+        <span v-if="!activeIcon" class="burger-bar burger-bar-one"></span>
+        <span
+          v-else
+          class="burger-bar burger-bar-one burger-bar-one--active"
+        ></span>
+        <span v-if="!activeIcon" class="burger-bar burger-bar-two"></span>
+        <span
+          v-else
+          class="burger-bar burger-bar-two burger-bar-two--active"
+        ></span>
+        <span v-if="!activeIcon" class="burger-bar burger-bar-three"></span>
+        <span
+          v-else
+          class="burger-bar burger-bar-three burger-bar-three--active"
+        ></span>
       </button>
 
       <h1>QUIZBOX</h1>
@@ -18,9 +30,11 @@
       </svg>
     </div>
     <SiteMenu :active="active">
-      <router-link to="/">Home</router-link>
-      <router-link :to="{ name: 'quizbox' }">Play Quizbox</router-link>
-      <router-link :to="{ name: 'browseQuestions' }"
+      <router-link @click="toggleMenu" to="/">Home</router-link>
+      <router-link @click="toggleMenu" :to="{ name: 'quizbox' }"
+        >Play Quizbox</router-link
+      >
+      <router-link @click="toggleMenu" :to="{ name: 'browseQuestions' }"
         >Browse Questions</router-link
       >
     </SiteMenu>
@@ -34,11 +48,13 @@ export default {
   data() {
     return {
       active: false,
+      activeIcon: false,
     };
   },
   methods: {
     toggleMenu() {
       this.active = !this.active;
+      this.activeIcon = !this.activeIcon;
     },
   },
 };
@@ -89,6 +105,19 @@ h1 {
 }
 .burger-bar-one {
   left: 0px;
+}
+
+.burger-bar-one--active {
+  transform: rotate(45deg);
+}
+
+.burger-bar-two--active {
+  top: 50%;
+  transform: rotate(135deg);
+}
+
+.burger-bar-three--active {
+  display: none;
 }
 
 a {

@@ -100,6 +100,11 @@ li {
   box-shadow: 3.5px 3.5px var(--primary-color);
 }
 
+.btn-quizbox:hover {
+  background-color: var(--primary-color);
+  color: var(--surface-color);
+}
+
 .topic-category {
   display: flex;
   align-items: center;

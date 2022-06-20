@@ -29,10 +29,11 @@ nav {
 }
 .navigation {
   position: absolute;
-  transform: translateY(-100%);
+  transform: translateY(-96%);
   width: 100%;
   background-color: var(--secondary-color);
   z-index: 1;
+  transition: transform 0.4s ease-in-out;
 }
 
 .svg-arrow-bright {
@@ -41,7 +42,8 @@ nav {
   fill: var(--secondary-color);
 }
 .active {
+  margin-top: 0;
   transform: translateY(-20px);
-  translate: transform 0.4s ease;
+  transition: transform 0.4s ease-in-out;
 }
 </style>
